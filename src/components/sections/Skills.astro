@@ -16,6 +16,11 @@ import Swift from "@/icons/swift.astro"
 import SwiftUI from "@/icons/swiftui.astro"
 import Kotlin from "@/icons/kotlin.astro"
 import Flutter from "@/icons/flutter.astro"
+import PHP from "@/icons/php.astro"
+import Android from "@/icons/android.astro"
+import Firebase from "@/icons/Firebase.astro"
+import Java from "@/icons/Java.astro"
+import Cshart from "@/icons/Cshart.astro"
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -33,6 +38,11 @@ const SKILLS_ICONS: Record<string, any> = {
   SwiftUI,
   Kotlin,
   Flutter,
+  PHP,
+  Android,
+  Firebase,
+  Java,
+  Cshart  
 }
 ---
 
@@ -40,7 +50,9 @@ const SKILLS_ICONS: Record<string, any> = {
   <ul>
     {
       skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name
+        const iconNames = ["Next.js", "C#", "React Native"]
+        const iconRef = ["Next", "Cshart", "React"]
+        const iconName = iconNames.includes(name) ? iconRef[iconNames.indexOf(name)] : name
         const Icon = SKILLS_ICONS[iconName]
 
         return (
